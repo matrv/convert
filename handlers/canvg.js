@@ -50,7 +50,7 @@ async function doConvert (inputFile, inputFormat, outputFormat) {
   return await new Promise((resolve, reject) => {
     canvas.toBlob((blob) => {
       blob.arrayBuffer().then(buf => resolve(new Uint8Array(buf)));
-    });
+    }, outputFormat.mime);
   });
 
 }
